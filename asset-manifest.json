@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/terry-lws.github.io/static/css/main.073c9b0a.css",
+    "main.js": "/terry-lws.github.io/static/js/main.65966a1c.js",
+    "static/js/787.d3d79a7e.chunk.js": "/terry-lws.github.io/static/js/787.d3d79a7e.chunk.js",
+    "static/media/logo.svg": "/terry-lws.github.io/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/terry-lws.github.io/index.html",
+    "main.073c9b0a.css.map": "/terry-lws.github.io/static/css/main.073c9b0a.css.map",
+    "main.65966a1c.js.map": "/terry-lws.github.io/static/js/main.65966a1c.js.map",
+    "787.d3d79a7e.chunk.js.map": "/terry-lws.github.io/static/js/787.d3d79a7e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.65966a1c.js"
+  ]
+}
