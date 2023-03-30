@@ -8,7 +8,7 @@ import { AlertProvider } from "./context/alertContext";
 import Alert from "./components/Alert";
 import SkillsSection from "./components/SkillsSection";
 import ScrollToTopButton from "./components/ScrollToTopButton";
-import Bio from "./components/Bio"
+import BioSection from "./components/BioSection"
 
 function App() {
   return (
@@ -17,7 +17,7 @@ function App() {
         <main>
           <Header />
           <LandingSection />
-          {/* <Bio /> */}
+          <BioSection />
           <SkillsSection />
           <ProjectsSection />
           <ScrollToTopButton />
