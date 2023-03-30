@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
@@ -6,9 +5,10 @@ import {
   faGithub,
   faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
-import { CloseButton, IconButton, Box, HStack, VStack, useToast, Tooltip } from "@chakra-ui/react";
+import { IconButton, Box, HStack, VStack, useToast, Tooltip } from "@chakra-ui/react";
 import { useDisclosure } from "@chakra-ui/react";
-import { HamburgerIcon } from "@chakra-ui/icons";
+//import { HamburgerIcon } from "@chakra-ui/icons";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
 
 const socials = [
   {
@@ -63,7 +63,7 @@ const Header = () => {
         >
           <nav>
             <HStack spacing={8}>
-              <IconButton
+              {/* <IconButton
                 size="md"
                 icon={<HamburgerIcon />}
                 aria-label="Open Menu"
@@ -71,6 +71,24 @@ const Header = () => {
                 backgroundColor="white"
                 color="black"
                 onClick={onOpen}
+              /> */}
+              <IconButton
+                size="md"
+                icon={
+                  <FontAwesomeIcon
+                    icon={faBars}
+                    transition="transform 0.2s ease-in-out"
+                    transform={isOpen ? "rotate(90deg)" : ""}
+
+                  />
+                }
+                display={{ md: "none" }}
+                aria-label={isOpen ? "Close Menu" : "Open Menu"}
+                backgroundColor="white"
+                color="black"
+                onClick={isOpen ? onClose : onOpen}
+                _hover={{ backgroundColor: "whiteAlpha.800" }}
+                _active={{ backgroundColor: "whiteAlpha.900" }}
               />
               <CopyToClipboard text={socials.find(p => p.icon === faEnvelope).url}>
                 <div>
@@ -105,6 +123,9 @@ const Header = () => {
           </nav>
           <nav>
             <HStack spacing={8} display={{ base: "none", md: "flex" }}>
+              <a href="#bio" onClick={handleClick("bio")}>
+                About Me
+              </a>
               <a href="#skills" onClick={handleClick("skills")}>
                 Skills
               </a>
@@ -121,13 +142,15 @@ const Header = () => {
         {isOpen ? (
           <Box pb={4}>
             <VStack spacing={4}>
+              <a href="#bio" onClick={handleClick("bio")}>
+                About Me
+              </a>
               <a href="#skills" onClick={handleClick("skills")}>
                 Skills
               </a>
               <a href="#projects" onClick={handleClick("projects")}>
                 Projectss
               </a>
-              <CloseButton onClick={onClose} />
             </VStack>
           </Box>
         ) : null}
