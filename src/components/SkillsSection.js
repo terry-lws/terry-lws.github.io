@@ -77,7 +77,8 @@ const scSkills = [
 const SkillsSection = () => {
     return (
         <FullScreenSection
-            backgroundColor="#FFFFFF"
+            //backgroundColor="#FFFFFF"
+            backgroundColor="#dddddd"
             px={8}
             py={20}
             alignItems="center"

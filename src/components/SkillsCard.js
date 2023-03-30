@@ -3,7 +3,7 @@ import React from "react";
 
 const SkillsCard = ({ title, imageSrc }) => {
     return (
-        <WrapItem>
+        <WrapItem boxShadow="lg">
             <Center>
                 <Card maxW='sm'>
                     <CardBody>
