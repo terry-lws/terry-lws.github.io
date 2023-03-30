@@ -1,13 +1,15 @@
 import React from "react";
-import { Avatar, Heading, VStack, Text } from "@chakra-ui/react";
+import { Heading, VStack, Text } from "@chakra-ui/react";
 import FullScreenSection from "./FullScreenSection";
 
-const hero = "Hi, I'm Terry Lam";
+const hero = "Hi, I'm Terry";
 const subhero = "Front-end Web Developer specialises in React";
 
 const LandingSection = () => {
   return (
     <FullScreenSection
+      px={8}
+      py={20}
       justifyContent="center"
       alignItems="center"
       backgroundColor="#dddddd"
