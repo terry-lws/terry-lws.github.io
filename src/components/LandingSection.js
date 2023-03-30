@@ -3,7 +3,7 @@ import { Avatar, Heading, VStack, Text } from "@chakra-ui/react";
 import FullScreenSection from "./FullScreenSection";
 
 const hero = "Hi, I'm Terry Lam";
-const subhero = "A Front-end Web Developer specialises in React";
+const subhero = "Front-end Web Developer specialises in React";
 
 const LandingSection = () => {
   return (

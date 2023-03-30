@@ -16,7 +16,6 @@ function App() {
       <AlertProvider>
         <main>
           <Header />
-          {/* <Navbar /> */}
           <LandingSection />
           {/* <Bio /> */}
           <SkillsSection />
