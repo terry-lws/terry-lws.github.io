@@ -6,9 +6,8 @@ import {
   faGithub,
   faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
-import { IconButton, Box, HStack, VStack, useToast, Tooltip } from "@chakra-ui/react";
+import { IconButton, Box, HStack, VStack, useToast, Tooltip, Collapse, useBreakpointValue } from "@chakra-ui/react";
 import { useDisclosure } from "@chakra-ui/react";
-//import { HamburgerIcon } from "@chakra-ui/icons";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 
 const socials = [
@@ -38,35 +37,17 @@ const Header = () => {
     }
   };
 
-  const headerRef = useRef(null);
+  const handleItemClick = () => {
+    onToggle();
+  };
 
-  useEffect(() => {
-    let prevScrollPos = window.scrollY;
-  
-    const handleScroll = () => {
-      const currentScrollPos = window.scrollY;
-      const headerElement = headerRef.current;
-      if (!headerElement) {
-        return;
-      }
-      if (prevScrollPos > currentScrollPos) {
-        headerElement.style.transform = "translateY(0)";
-      } else {
-        headerElement.style.transform = "translateY(-200px)";
-      }
-      prevScrollPos = currentScrollPos;
-    }
-  
-    window.addEventListener('scroll', handleScroll)
-  
-    return () => {
-      window.removeEventListener('scroll', handleScroll)
-    }
-  }, []);
+  //const headerRef = useRef(null);
 
-  const { isOpen, onOpen, onClose } = useDisclosure();
+  const { isOpen, onToggle } = useDisclosure();
 
   const toast = useToast()
+
+  const isMobile = useBreakpointValue({ base: true, md: false });
 
   return (
     <Box
@@ -80,73 +61,119 @@ const Header = () => {
       transitionTimingFunction="ease-in-out"
       backgroundColor="#18181b"
       zIndex="1"
-      ref={headerRef}
+      //ref={headerRef}
     >
       <Box color="white" maxWidth="1280px" margin="0 auto">
         <HStack
-          px={16}
+          px={{ md: 16, base: 8 }}
           py={4}
-          justifyContent={{ md: "space-between", base: "center" }}
-          alignItems="center"
+          justifyContent={{ md: "space-between", base: "flex-start" }}
+          alignItems={{ md: "center", base: "flex-start" }}
         >
           <nav>
             <HStack spacing={8}>
-              {/* <IconButton
-                size="md"
-                icon={<HamburgerIcon />}
-                aria-label="Open Menu"
-                display={{ md: "none" }}
-                backgroundColor="white"
-                color="black"
-                onClick={onOpen}
-              /> */}
-              <IconButton
-                size="md"
-                icon={
-                  <FontAwesomeIcon
-                    icon={faBars}
-                    transition="transform 0.2s ease-in-out"
-                    transform={isOpen ? "rotate(90deg)" : ""}
-
-                  />
-                }
-                display={{ md: "none" }}
-                aria-label={isOpen ? "Close Menu" : "Open Menu"}
-                backgroundColor="white"
-                color="black"
-                onClick={isOpen ? onClose : onOpen}
-                _hover={{ backgroundColor: "whiteAlpha.800" }}
-                _active={{ backgroundColor: "whiteAlpha.900" }}
-              />
-              <CopyToClipboard text={socials.find(p => p.icon === faEnvelope).url}>
-                <div>
-                  <Tooltip label='Copy email to clipboard'>
-                    <FontAwesomeIcon onClick={() =>
-                      toast({
-                        title: 'Email copied!',
-                        status: 'success',
-                        duration: 2500,
-                        position: 'top',
-                        isClosable: true,
-                      })
+              <nav>
+                {isMobile &&
+                  <IconButton
+                    size="md"
+                    icon={
+                      <FontAwesomeIcon
+                        icon={faBars}
+                      />
                     }
-                      icon={socials.find(p => p.icon === faEnvelope).icon}
-                      size="2x"
-                      style={{ cursor: 'pointer' }} />
+                    display={{ md: "none" }}
+                    aria-label={isOpen ? "Close Menu" : "Open Menu"}
+                    backgroundColor="white"
+                    color="black"
+                    _hover={{ backgroundColor: "whiteAlpha.800" }}
+                    _active={{ backgroundColor: "whiteAlpha.900" }}
+                    onClick={onToggle}
+                  />}
+                <Collapse in={isOpen} animateOpacity>
+                  <Box
+                    top="100%"
+                    right={0}
+                    mt={2}
+                    py={2}
+                    minWidth="max-content"
+                    zIndex={1}
+                  >
+                    <HStack spacing={4}>
+                      <Box pb={4} overflow="hidden" transition="0.3s ease">
+                        <VStack spacing={4} alignItems="flex-start">
+                          <CopyToClipboard text={socials.find(p => p.icon === faEnvelope).url}>
+                            <div>
+                              <Tooltip label='Copy email to clipboard'>
+                                <FontAwesomeIcon onClick={() =>
+                                  toast({
+                                    title: 'Email copied!',
+                                    status: 'success',
+                                    duration: 2500,
+                                    position: 'top',
+                                    isClosable: true,
+                                  })
+                                }
+                                  icon={socials.find(p => p.icon === faEnvelope).icon}
+                                  size="2x"
+                                  style={{ cursor: 'pointer' }} />
+                              </Tooltip>
+                            </div>
+                          </CopyToClipboard>
+                          <a href={socials.find(p => p.icon === faGithub).url} target='blank'>
+                            <Tooltip label='GitHub'>
+                              <FontAwesomeIcon icon={socials.find(p => p.icon === faGithub).icon} size="2x" />
+                            </Tooltip>
+                          </a>
+                          <a href={socials.find(p => p.icon === faLinkedin).url} target='blank'>
+                            <Tooltip label='LinkedIn'>
+                              <FontAwesomeIcon icon={socials.find(p => p.icon === faLinkedin).icon} size="2x" />
+                            </Tooltip>
+                          </a>
+                          <a href="#bio" onClick={handleClick("bio")}>
+                            About Me
+                          </a>
+                          <a href="#skills" onClick={handleClick("skills")}>
+                            Skills
+                          </a>
+                          <a href="#projects" onClick={handleClick("projects")}>
+                            Projectss
+                          </a>
+                        </VStack>
+                      </Box>
+                    </HStack>
+                  </Box>
+                </Collapse>
+              </nav>
+              <HStack spacing={8} display={{ base: "none", md: "flex" }}>
+                <CopyToClipboard text={socials.find(p => p.icon === faEnvelope).url}>
+                  <div>
+                    <Tooltip label='Copy email to clipboard'>
+                      <FontAwesomeIcon onClick={() =>
+                        toast({
+                          title: 'Email copied!',
+                          status: 'success',
+                          duration: 2500,
+                          position: 'top',
+                          isClosable: true,
+                        })
+                      }
+                        icon={socials.find(p => p.icon === faEnvelope).icon}
+                        size="2x"
+                        style={{ cursor: 'pointer' }} />
+                    </Tooltip>
+                  </div>
+                </CopyToClipboard>
+                <a href={socials.find(p => p.icon === faGithub).url} target='blank'>
+                  <Tooltip label='GitHub'>
+                    <FontAwesomeIcon icon={socials.find(p => p.icon === faGithub).icon} size="2x" />
                   </Tooltip>
-                </div>
-              </CopyToClipboard>
-
-              <a href={socials.find(p => p.icon === faGithub).url} target='blank'>
-                <Tooltip label='GitHub'>
-                  <FontAwesomeIcon icon={socials.find(p => p.icon === faGithub).icon} size="2x" />
-                </Tooltip>
-              </a>
-              <a href={socials.find(p => p.icon === faLinkedin).url} target='blank'>
-                <Tooltip label='LinkedIn'>
-                  <FontAwesomeIcon icon={socials.find(p => p.icon === faLinkedin).icon} size="2x" />
-                </Tooltip>
-              </a>
+                </a>
+                <a href={socials.find(p => p.icon === faLinkedin).url} target='blank'>
+                  <Tooltip label='LinkedIn'>
+                    <FontAwesomeIcon icon={socials.find(p => p.icon === faLinkedin).icon} size="2x" />
+                  </Tooltip>
+                </a>
+              </HStack>
             </HStack>
           </nav>
           <nav>
@@ -166,22 +193,6 @@ const Header = () => {
             </HStack>
           </nav>
         </HStack>
-
-        {isOpen ? (
-          <Box pb={4}>
-            <VStack spacing={4}>
-              <a href="#bio" onClick={handleClick("bio")}>
-                About Me
-              </a>
-              <a href="#skills" onClick={handleClick("skills")}>
-                Skills
-              </a>
-              <a href="#projects" onClick={handleClick("projects")}>
-                Projectss
-              </a>
-            </VStack>
-          </Box>
-        ) : null}
       </Box>
     </Box>
   );
