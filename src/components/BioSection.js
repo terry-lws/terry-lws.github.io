@@ -7,17 +7,18 @@ import FullScreenSection from "./FullScreenSection";
 const Bio = () => {
     return (
         <FullScreenSection
+            id="bio-section"
             backgroundColor="white"
-            //isDarkBackground
             px={8}
             py={20}
             alignItems="flex-start"
             spacing={8}
+
         >
-            <VStack spacing={5}>
-                <Flex gap={10} wrap={{base:"wrap", lg:"nowrap"}} justifyContent="center">
-                    <Box w={{base:"none", lg:'60%'}} p={2}>
-                        <Heading pb={3} as="h1" id="bio-section">
+            <VStack spacing={5} >
+                <Flex gap={10} wrap={{ base: "wrap", lg: "nowrap" }} justifyContent="center">
+                    <Box w={{ base: "none", lg: '60%' }} p={2}>
+                        <Heading pb={3} as="h1">
                             About Me
                         </Heading>
                         <Text py={3}>
@@ -45,7 +46,7 @@ const Bio = () => {
                         </Text>
                     </Box>
                     <Box
-                        w={{base:"none", lg:'40%'}}
+                        w={{ base: "none", lg: '40%' }}
                         p={2}
                         display="grid"
                         justifyContent="center"

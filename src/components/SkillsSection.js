@@ -77,6 +77,7 @@ const scSkills = [
 const SkillsSection = () => {
     return (
         <FullScreenSection
+            id="skills-section"
             //backgroundColor="#FFFFFF"
             backgroundColor="#dddddd"
             px={8}
@@ -85,7 +86,7 @@ const SkillsSection = () => {
             spacing={8}
             textAlign="center"
         >
-            <Heading as="h1" id="skills-section">
+            <Heading as="h1">
                 Skills
             </Heading>
             <Box>
