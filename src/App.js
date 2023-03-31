@@ -9,13 +9,17 @@ import Alert from "./components/Alert";
 import SkillsSection from "./components/SkillsSection";
 import ScrollToTopButton from "./components/ScrollToTopButton";
 import BioSection from "./components/BioSection"
+import DropdownMenu from "./components/DropdownMenu";
+import AltHeader from "./components/AltHeader"
 
 function App() {
   return (
     <ChakraProvider>
       <AlertProvider>
         <main>
+          {/* <AltHeader /> */}
           <Header />
+          {/* <DropdownMenu/> */}
           <LandingSection />
           <BioSection />
           <SkillsSection />
