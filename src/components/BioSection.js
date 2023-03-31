@@ -15,7 +15,7 @@ const Bio = () => {
             spacing={8}
         >
             <VStack spacing={5}>
-                <Flex gap={6} wrap={{base:"wrap", lg:"nowrap"}} justifyContent="center">
+                <Flex gap={10} wrap={{base:"wrap", lg:"nowrap"}} justifyContent="center">
                     <Box w={{base:"none", lg:'60%'}} p={2}>
                         <Heading pb={3} as="h1" id="bio-section">
                             About Me
@@ -50,7 +50,7 @@ const Bio = () => {
                         display="grid"
                         justifyContent="center"
                         alignItems="center">
-                        <Image src='gibbresh.png' fallbackSrc='https://via.placeholder.com/400' />
+                        <Image src={require("../images/pfp.jpeg")} />
                     </Box>
                 </Flex>
             </VStack>
