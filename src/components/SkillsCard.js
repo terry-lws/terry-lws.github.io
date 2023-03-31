@@ -9,7 +9,7 @@ const SkillsCard = ({ title, imageSrc }) => {
                     <CardBody>
                         <img src={imageSrc} />
                         <Stack mt='6'>
-                            <Heading size='md'>{title}</Heading>
+                            <Heading as="h3" size='md'>{title}</Heading>
                         </Stack>
                     </CardBody>
                 </Card>
