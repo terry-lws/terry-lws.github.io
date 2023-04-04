@@ -1,9 +1,10 @@
 {
   "files": {
     "main.css": "/static/css/main.e6c13ad2.css",
-    "main.js": "/static/js/main.707a0793.js",
+    "main.js": "/static/js/main.9dd2a135.js",
     "static/js/787.d3d79a7e.chunk.js": "/static/js/787.d3d79a7e.chunk.js",
     "static/media/bird_classification.png": "/static/media/bird_classification.caeb7036fe467f78e499.png",
+    "static/media/codingv2.gif": "/static/media/codingv2.ccd3fad9d310659fce05.gif",
     "static/media/prml.png": "/static/media/prml.b20af4a95e3a9fd53a22.png",
     "static/media/pfp.jpeg": "/static/media/pfp.d02f015ebb5f44122489.jpeg",
     "static/media/weather.PNG": "/static/media/weather.472a2891024e79533a29.PNG",
@@ -11,11 +12,11 @@
     "static/media/matlab.png": "/static/media/matlab.cd99114eb8ef072b4ccf.png",
     "index.html": "/index.html",
     "main.e6c13ad2.css.map": "/static/css/main.e6c13ad2.css.map",
-    "main.707a0793.js.map": "/static/js/main.707a0793.js.map",
+    "main.9dd2a135.js.map": "/static/js/main.9dd2a135.js.map",
     "787.d3d79a7e.chunk.js.map": "/static/js/787.d3d79a7e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.707a0793.js"
+    "static/js/main.9dd2a135.js"
   ]
 }
