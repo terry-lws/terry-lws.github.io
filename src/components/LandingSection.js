@@ -16,7 +16,7 @@ const LandingSection = () => {
       alignItems="center"
       minHeight="100vh"
       color="white"
-      bg={`linear-gradient(to bottom, rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url(${gif})`}
+      bg={`linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(${gif})`}
       bgSize="cover"
       textAlign="center"
     >
