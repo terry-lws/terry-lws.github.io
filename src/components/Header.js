@@ -6,8 +6,17 @@ import {
   faGithub,
   faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
-import { IconButton, Box, HStack, VStack, useToast, Tooltip, Collapse, useBreakpointValue } from "@chakra-ui/react";
-import { useDisclosure } from "@chakra-ui/react";
+import {
+  IconButton,
+  Box,
+  HStack,
+  VStack,
+  useToast,
+  Tooltip,
+  Collapse,
+  useBreakpointValue,
+  useDisclosure
+} from "@chakra-ui/react";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 
 const socials = [
@@ -61,7 +70,6 @@ const Header = () => {
       transitionTimingFunction="ease-in-out"
       backgroundColor="#18181b"
       zIndex="1"
-      //ref={headerRef}
     >
       <Box color="white" maxWidth="1280px" margin="0 auto">
         <HStack
@@ -152,7 +160,7 @@ const Header = () => {
                         toast({
                           title: 'Email copied!',
                           status: 'success',
-                          duration: 2500,
+                          duration: 1500,
                           position: 'top',
                           isClosable: true,
                         })
