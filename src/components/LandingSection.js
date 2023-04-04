@@ -9,18 +9,25 @@ const subhero = "Front-end Web Developer specialises in React";
 const LandingSection = () => {
   return (
     <Box
-    display="flex"
-      px={8}
+      display="flex"
+      //px={8}
       py={20}
       justifyContent="center"
       alignItems="center"
       minHeight="100vh"
       color="white"
-      bg={`linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(${gif})`}
+      bg={`linear-gradient(to bottom, rgba(32,32,32,0.4), rgba(32,32,32,0.4)), url(${gif})`}
       bgSize="cover"
       textAlign="center"
     >
-      <VStack spacing={5} position="relative" bottom="10vh">
+      <VStack
+        spacing={5}
+        py={5}
+        position="relative"
+        bottom="10vh"
+        backgroundColor='rgba(10,10,10,0.8)'
+        flex="1 1 100%"
+        >
         <Heading size={'2xl'}>
           {hero}
         </Heading>
