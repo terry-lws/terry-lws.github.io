@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, Heading, VStack, Box, Image, Grid } from "@chakra-ui/react";
+import { Text, Heading, VStack, Box, Image } from "@chakra-ui/react";
 import { Flex } from '@chakra-ui/react'
 //import { Container } from '@chakra-ui/react'
 import FullScreenSection from "./FullScreenSection";
@@ -12,8 +12,8 @@ const Bio = () => {
             px={8}
             py={20}
             alignItems="flex-start"
+            justifyContent="center"
             spacing={8}
-
         >
             <VStack spacing={5} >
                 <Flex gap={10} wrap={{ base: "wrap", lg: "nowrap" }} justifyContent="center">
