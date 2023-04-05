@@ -22,7 +22,7 @@ const LandingSection = () => {
     >
       <VStack
         spacing={5}
-        py={5}
+        p={5}
         position="relative"
         bottom="10vh"
         backgroundColor='rgba(10,10,10,0.8)'
