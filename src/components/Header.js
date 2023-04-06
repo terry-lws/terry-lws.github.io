@@ -116,7 +116,7 @@ const Header = () => {
                                   toast({
                                     title: 'Email copied!',
                                     status: 'success',
-                                    duration: 2500,
+                                    duration: 1500,
                                     position: 'top',
                                     isClosable: true,
                                   })
