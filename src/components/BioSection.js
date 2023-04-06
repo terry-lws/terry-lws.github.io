@@ -25,6 +25,11 @@ const Bio = () => {
                             Hi there! My name is Terry Lam and I am a post-graduate computer science student at Monash University
                             and a volunteer front-end web developer at a not-for-profit organisation.
                         </Text>
+                        {/* <Text py={3}>
+                            In my free time, I enjoy indulging in a variety of hobbies that help me recharge and relax.
+                            I love staying active, and I try to maintain a regular exercise routine to keep myself physically and mentally fit.
+                            I enjoy hiking and cycling, which not only keep me fit but also help me explore new places and enjoy nature.
+                        </Text> */}
                         <Text py={3}>
                             During my Bachelor of Information Technology education in Australia, I was exposed to many fields of the IT industry,
                             such as, machine learning, software engineering, and ICT project management. However, nothing interested me as much as web development did.
@@ -36,7 +41,7 @@ const Bio = () => {
                             I am currently pursuing a professional certificate course in front-end web development provided by Meta to equip myself with industry-standard skills and prepare myself for a job-ready environment.
                         </Text>
                         <Text py={3}>
-                            Aside from web development, I have also aquired knowledge in various programming languages such as Python and Java,
+                            Aside from web development, I have also acquired knowledge in various programming languages such as Python and Java,
                             as well as ICT project management methodologies and approaches.
                         </Text>
                         <Text py={3}>
