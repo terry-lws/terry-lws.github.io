@@ -1,67 +1,72 @@
 import React from "react";
 import { Text, Heading, VStack, Box, Image } from "@chakra-ui/react";
-import { Flex } from '@chakra-ui/react'
+import { Flex } from "@chakra-ui/react";
 //import { Container } from '@chakra-ui/react'
 import FullScreenSection from "./FullScreenSection";
+import NameCard from "./NameCard";
 
 const Bio = () => {
-    return (
-        <FullScreenSection
-            id="bio-section"
-            backgroundColor="white"
-            px={8}
-            py={20}
-            alignItems="flex-start"
-            justifyContent="center"
-            spacing={8}
-        >
-            <VStack spacing={5} >
-                <Flex gap={10} wrap={{ base: "wrap", lg: "nowrap" }} justifyContent="center">
-                    <Box w={{ base: "none", lg: '60%' }} p={2}>
-                        <Heading pb={3} as="h1">
-                            About Me
-                        </Heading>
-                        <Text py={3}>
-                            Hi there! My name is Terry Lam and I am a post-graduate computer science student at Monash University
-                            and a volunteer front-end web developer at a not-for-profit organisation.
-                        </Text>
-                        {/* <Text py={3}>
-                            In my free time, I enjoy indulging in a variety of hobbies that help me recharge and relax.
-                            I love staying active, and I try to maintain a regular exercise routine to keep myself physically and mentally fit.
-                            I enjoy hiking and cycling, which not only keep me fit but also help me explore new places and enjoy nature.
-                        </Text> */}
-                        <Text py={3}>
-                            During my Bachelor of Information Technology education in Australia, I was exposed to many fields of the IT industry,
-                            such as, machine learning, software engineering, and ICT project management. However, nothing interested me as much as web development did.
-                            I have always been fascinated by the intersection of technology and design, and web development is the perfect field to bring those two together.
-                        </Text>
-                        <Text py={3}>
-                            Throughout my academic studies, I have taken courses in web design and programming, which have helped me develop a strong foundation in HTML, CSS, and JavaScript,
-                            along with other web development frameworks and libraries.
-                            I am currently pursuing a professional certificate course in front-end web development provided by Meta to equip myself with industry-standard skills and prepare myself for a job-ready environment.
-                        </Text>
-                        <Text py={3}>
-                            Aside from web development, I have also acquired knowledge in various programming languages such as Python and Java,
-                            as well as ICT project management methodologies and approaches.
-                        </Text>
-                        <Text py={3}>
-                            My short-term goal is to secure a position as a front-end web developer,
-                            which will allow me to gain real-world industry experience and expand my technical and workplace knowledge.
-                            In the long term, I aim to further develop my skills by exposing myself to back-end web development and eventually become a full-stack developer.
-                        </Text>
-                    </Box>
-                    <Box
-                        w={{ base: "none", lg: '40%' }}
-                        p={2}
-                        display="grid"
-                        justifyContent="center"
-                        alignItems="center">
-                        <Image src={require("../images/pfp.jpeg")} />
-                    </Box>
-                </Flex>
-            </VStack>
-        </FullScreenSection>
-    )
+  return (
+    <FullScreenSection
+      id="bio-section"
+      backgroundColor="#d2f2f9"
+      px={8}
+      py={20}
+      alignItems="flex-start"
+      justifyContent="center"
+      spacing={8}
+    >
+      
+      <Flex
+        gap={8}
+        wrap={{ base: "wrap", lg: "nowrap" }}
+        justifyContent="center"
+      >
+        <NameCard></NameCard>
+        <Box w={{lg: "50%"}}>
+        <Heading as="h1">
+          Terry Lam
+        </Heading>
+          <Text py={3}>
+            Hi there, I'm Terry! Welcome to my portfolio. I am a front-end web
+            developer intern at Vpply and a post-graduate computer science
+            student at Monash University.
+          </Text>
+          <Text py={3}>
+            During my Bachelor of Information Technology education at the University of Canberra,
+            I was exposed to many fields of the IT industry, such as, machine
+            learning, software engineering, and ICT project management. However,
+            nothing interested me as much as web development did. I have always
+            been fascinated by the intersection of technology and design, and
+            web development is the perfect field to bring those two together.
+          </Text>
+          <Text py={3}>
+            Throughout my academic studies, I have taken courses in web design
+            and programming, which have helped me develop a strong foundation in
+            HTML, CSS, and JavaScript, along with other web development
+            frameworks and libraries. I am currently pursuing a professional
+            certificate course in front-end web development provided by Meta to
+            equip myself with industry-standard skills and prepare myself for a
+            job-ready environment.
+          </Text>
+          {/* <Text py={3}>
+              Aside from web development, I have also acquired knowledge in
+              various programming languages such as Python and Java, as well as
+              ICT project management methodologies and approaches.
+            </Text> */}
+          {/* <Text py={3}>
+              My short-term goal is to secure a position as a front-end web
+              developer, which will allow me to gain real-world industry
+              experience and expand my technical and workplace knowledge. In the
+              long term, I aim to further develop my skills by exposing myself
+              to back-end web development and eventually become a full-stack
+              developer.
+            </Text> */}
+        </Box>
+        
+      </Flex>
+    </FullScreenSection>
+  );
 };
 
 export default Bio;

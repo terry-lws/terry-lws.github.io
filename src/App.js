@@ -22,8 +22,8 @@ function App() {
           {/* <DropdownMenu/> */}
           <LandingSection />
           <BioSection />
-          <SkillsSection />
-          <ProjectsSection />
+          {/* <SkillsSection />
+          <ProjectsSection /> */}
           <ScrollToTopButton />
           <Footer />
           <Alert />

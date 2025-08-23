@@ -4,7 +4,7 @@ import gif from "../images/codingv2.gif";
 import FullScreenSection from "./FullScreenSection";
 
 const hero = "Hi, I'm Terry";
-const subhero = "Front-end Web Developer specialises in React";
+const subhero = "Front-end Web Developer";
 
 const LandingSection = () => {
   return (
