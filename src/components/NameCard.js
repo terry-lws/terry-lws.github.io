@@ -43,7 +43,6 @@ const NameCard = () => {
         <VStack spacing={5} p={[2, 4]} align="center">
           <Avatar
             size="2xl"
-            name="Dan Abrahmov"
             src="https://bit.ly/sage-adebayo"
           />
           <Heading size="md">Terry Lam</Heading>

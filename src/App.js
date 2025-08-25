@@ -11,6 +11,7 @@ import ScrollToTopButton from "./components/ScrollToTopButton";
 import BioSection from "./components/BioSection"
 import DropdownMenu from "./components/DropdownMenu";
 import AltHeader from "./components/AltHeader"
+import ResumeSection from "./components/ResumeSection";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           {/* <DropdownMenu/> */}
           <LandingSection />
           <BioSection />
+          <ResumeSection />
           {/* <SkillsSection />
           <ProjectsSection /> */}
           <ScrollToTopButton />

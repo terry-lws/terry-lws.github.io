@@ -15,7 +15,8 @@ import {
   Tooltip,
   Collapse,
   useBreakpointValue,
-  useDisclosure
+  useDisclosure,
+  Heading
 } from "@chakra-ui/react";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 
@@ -109,42 +110,18 @@ const Header = () => {
                     <HStack spacing={4}>
                       <Box pb={4} overflow="hidden" transition="0.3s ease">
                         <VStack spacing={4} alignItems="flex-start">
-                          {/* <CopyToClipboard text={socials.find(p => p.icon === faEnvelope).url}>
-                            <div>
-                              <Tooltip label='Copy email to clipboard'>
-                                <FontAwesomeIcon onClick={() =>
-                                  toast({
-                                    title: 'Email copied!',
-                                    status: 'success',
-                                    duration: 1500,
-                                    position: 'top',
-                                    isClosable: true,
-                                  })
-                                }
-                                  icon={socials.find(p => p.icon === faEnvelope).icon}
-                                  size="2x"
-                                  style={{ cursor: 'pointer' }} />
-                              </Tooltip>
-                            </div>
-                          </CopyToClipboard>
-                          <a href={socials.find(p => p.icon === faGithub).url} target='blank'>
-                            <Tooltip label='GitHub'>
-                              <FontAwesomeIcon icon={socials.find(p => p.icon === faGithub).icon} size="2x" />
-                            </Tooltip>
-                          </a>
-                          <a href={socials.find(p => p.icon === faLinkedin).url} target='blank'>
-                            <Tooltip label='LinkedIn'>
-                              <FontAwesomeIcon icon={socials.find(p => p.icon === faLinkedin).icon} size="2x" />
-                            </Tooltip>
-                          </a> */}
+                          Terry
                           <a href="#bio" onClick={handleClick("bio")}>
                             About Me
                           </a>
                           <a href="#skills" onClick={handleClick("skills")}>
-                            Skills
+                            Resume
                           </a>
                           <a href="#projects" onClick={handleClick("projects")}>
                             Projectss
+                          </a>
+                          <a href="#projects" onClick={handleClick("projects")}>
+                            Contact
                           </a>
                         </VStack>
                       </Box>
@@ -152,36 +129,9 @@ const Header = () => {
                   </Box>
                 </Collapse>
               </nav>
-              {/* <HStack spacing={8} display={{ base: "none", md: "flex" }}>
-                <CopyToClipboard text={socials.find(p => p.icon === faEnvelope).url}>
-                  <div>
-                    <Tooltip label='Copy email to clipboard'>
-                      <FontAwesomeIcon onClick={() =>
-                        toast({
-                          title: 'Email copied!',
-                          status: 'success',
-                          duration: 1500,
-                          position: 'top',
-                          isClosable: true,
-                        })
-                      }
-                        icon={socials.find(p => p.icon === faEnvelope).icon}
-                        size="2x"
-                        style={{ cursor: 'pointer' }} />
-                    </Tooltip>
-                  </div>
-                </CopyToClipboard>
-                <a href={socials.find(p => p.icon === faGithub).url} target='blank'>
-                  <Tooltip label='GitHub'>
-                    <FontAwesomeIcon icon={socials.find(p => p.icon === faGithub).icon} size="2x" />
-                  </Tooltip>
-                </a>
-                <a href={socials.find(p => p.icon === faLinkedin).url} target='blank'>
-                  <Tooltip label='LinkedIn'>
-                    <FontAwesomeIcon icon={socials.find(p => p.icon === faLinkedin).icon} size="2x" />
-                  </Tooltip>
-                </a>
-              </HStack> */}
+              <HStack spacing={8} display={{ base: "none", md: "flex" }}>
+                <Heading fontWeight="normal">Terry Lam</Heading>
+              </HStack>
             </HStack>
           </nav>
           <nav>
@@ -189,15 +139,15 @@ const Header = () => {
               <a href="#bio" onClick={handleClick("bio")}>
                 About Me
               </a>
-              {/* <a href="#skills" onClick={handleClick("skills")}>
-                Skills
+              <a href="#bio" onClick={handleClick("bio")}>
+                Resume
               </a>
-              <a href="#projects" onClick={handleClick("projects")}>
+              <a href="#bio" onClick={handleClick("bio")}>
                 Projects
-              </a> */}
-              {/* <a href="#contactme" onClick={handleClick("contactme")}>
+              </a>
+              <a href="#bio" onClick={handleClick("bio")}>
                 Contact
-              </a> */}
+              </a>
             </HStack>
           </nav>
         </HStack>
