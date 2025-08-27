@@ -18,14 +18,11 @@ function App() {
     <ChakraProvider>
       <AlertProvider>
         <main>
-          {/* <AltHeader /> */}
           <Header />
           {/* <DropdownMenu/> */}
-          <LandingSection />
+          {/* <LandingSection /> */}
           <BioSection />
           <ResumeSection />
-          {/* <SkillsSection />
-          <ProjectsSection /> */}
           <ScrollToTopButton />
           <Footer />
           <Alert />

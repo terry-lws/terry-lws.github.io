@@ -1,9 +1,28 @@
 import React from "react";
-import { Text, Heading, VStack, Box, Image } from "@chakra-ui/react";
+import {
+  Text,
+  Heading,
+  VStack,
+  Box,
+  Image,
+  Button,
+  ButtonGroup,
+} from "@chakra-ui/react";
 import { Flex } from "@chakra-ui/react";
 //import { Container } from '@chakra-ui/react'
 import FullScreenSection from "./FullScreenSection";
 import NameCard from "./NameCard";
+
+const handleClick = (anchor) => () => {
+  const id = `${anchor}-section`;
+  const element = document.getElementById(id);
+  if (element) {
+    element.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  }
+};
 
 const Bio = () => {
   return (
@@ -16,29 +35,27 @@ const Bio = () => {
       justifyContent="center"
       spacing={8}
     >
-      
       <Flex
         gap={8}
         wrap={{ base: "wrap", lg: "nowrap" }}
         justifyContent="center"
       >
         <NameCard></NameCard>
-        <Box w={{lg: "50%"}}>
-        <Heading as="h1">
-          Terry Lam
-        </Heading>
+        <Box w={{ lg: "50%" }}>
+          <Heading as="h1">Terry Lam</Heading>
           <Text py={3}>
             Hi there, I'm Terry! Welcome to my portfolio. I am a front-end web
             developer intern at Vpply and a post-graduate computer science
             student at Monash University.
           </Text>
           <Text py={3}>
-            During my Bachelor of Information Technology education at the University of Canberra,
-            I was exposed to many fields of the IT industry, such as, machine
-            learning, software engineering, and ICT project management. However,
-            nothing interested me as much as web development did. I have always
-            been fascinated by the intersection of technology and design, and
-            web development is the perfect field to bring those two together.
+            During my Bachelor of Information Technology education at the
+            University of Canberra, I was exposed to many fields of the IT
+            industry, such as, machine learning, software engineering, and ICT
+            project management. However, nothing interested me as much as web
+            development did. I have always been fascinated by the intersection
+            of technology and design, and web development is the perfect field
+            to bring those two together.
           </Text>
           <Text py={3}>
             Throughout my academic studies, I have taken courses in web design
@@ -49,6 +66,14 @@ const Bio = () => {
             equip myself with industry-standard skills and prepare myself for a
             job-ready environment.
           </Text>
+          <ButtonGroup>
+            <Button colorScheme='teal' borderRadius={100}>
+              <a href="#resume" onClick={handleClick("resume")}>
+                Resume
+              </a>
+            </Button>
+            <Button colorScheme='teal' borderRadius={100} variant='outline'>Projects</Button>
+          </ButtonGroup>
           {/* <Text py={3}>
               Aside from web development, I have also acquired knowledge in
               various programming languages such as Python and Java, as well as
@@ -63,7 +88,6 @@ const Bio = () => {
               developer.
             </Text> */}
         </Box>
-        
       </Flex>
     </FullScreenSection>
   );

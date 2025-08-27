@@ -1,7 +1,7 @@
 import React from "react";
 import FullScreenSection from "./FullScreenSection";
 import { Box, Heading, Wrap } from "@chakra-ui/react";
-import Skills from './SkillsCard'
+import Skills from './OldSkillsCard'
 
 const webSkills = [
     {

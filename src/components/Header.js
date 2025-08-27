@@ -69,10 +69,10 @@ const Header = () => {
       transitionProperty="transform"
       transitionDuration=".3s"
       transitionTimingFunction="ease-in-out"
-      backgroundColor="#18181b"
+      backgroundColor="#ffffffff"
       zIndex="1"
     >
-      <Box color="white" maxWidth="1280px" margin="0 auto">
+      <Box color="#18181b" maxWidth="1280px" margin="0 auto">
         <HStack
           px={{ md: 16, base: 8 }}
           py={4}
@@ -130,7 +130,7 @@ const Header = () => {
                 </Collapse>
               </nav>
               <HStack spacing={8} display={{ base: "none", md: "flex" }}>
-                <Heading fontWeight="normal">Terry Lam</Heading>
+                <Heading fontWeight="900">Terry Lam</Heading>
               </HStack>
             </HStack>
           </nav>
@@ -139,7 +139,7 @@ const Header = () => {
               <a href="#bio" onClick={handleClick("bio")}>
                 About Me
               </a>
-              <a href="#bio" onClick={handleClick("bio")}>
+              <a href="#resume" onClick={handleClick("resume")}>
                 Resume
               </a>
               <a href="#bio" onClick={handleClick("bio")}>

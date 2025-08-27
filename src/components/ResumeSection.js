@@ -1,34 +1,37 @@
 import React from "react";
 import FullScreenSection from "./FullScreenSection";
-import { VStack, Heading } from "@chakra-ui/react";
-import Cards from "./Card";
+import { VStack, Heading, Box } from "@chakra-ui/react";
+import EduCards from "./EduCard";
+import SkillsCard from "./SkillsCard";
 
-const experiences = [
+const educations = [
   {
-    title: "Monash University",
+    institution: "Monash University",
+    level: "Master Degree",
     degree: "Master of Computer Science",
+    major: "Specialise in Software Engineering",
     startDate: "2025",
     endDate: "Current",
-    description:
-      "A simple calculator app with basic calculation functions constructed with React Hooks such as useState and useRef. The calculator has the four basic operators, i.e., addition, deduction, multiplication, and division, as well as a clear input and a clear all functions.",
+    gpa: "",
   },
   {
-    title: "Monash University",
+    institution: "Monash University",
+    level: "Graduate Diploma",
     degree: "Graduate Diploma of Computer Science",
     startDate: "2023",
     endDate: "2025",
-    description:
-      "My first React project. A simple weather report web app constructed mainly with React and CSS. The app fetches real-time data of a location such as temperature, weather condition and wind speed from a third party online service using API.",
-    
+    wam: "75.25",
+    gpa: "3.25/4",
   },
   {
-    title: "University of Canberra",
+    institution: "University of Canberra",
+    level: "Bachelor Degree",
     degree: "Bachelor of Information Technology",
+    major: "Specialist Major in Robotics and AI",
     startDate: "2019",
     endDate: "2022",
-    description:
-      "Written in Python. A coursework project that applied machine learning methods such as SVM and KNN, to predict potential diabetes diseases in patients using the Pima Indians Diabetes Database. Outcomes and findings of the experiments are documented in a research paper.",
-    
+    wam: "75.44",
+    gpa: "5.64/7",
   },
 ];
 
@@ -37,22 +40,34 @@ const ResumeSection = () => {
     <FullScreenSection
       id="resume-section"
       backgroundColor="#e6dace"
-      px={8}
       py={20}
-      spacing={8}
+      spacing={16}
     >
       <Heading>Resume</Heading>
-      <Heading size="md">Expereince</Heading>
-        {experiences.map((experience) => (
-          <Cards
-            key={experience.title}
-            title={experience.title}
-            degree={experience.degree}
-            startDate={experience.startDate}
-            endDate={experience.endDate}
-            description={experience.description}
+      <VStack id="education" alignItems="stretch" gap={4} width={0.6}>
+        <Heading marginRight="calc(70% - 100px)!important" size="lg">
+          Education
+        </Heading>
+        {educations.map((education) => (
+          <EduCards
+            key={education.degree}
+            institution={education.institution}
+            degree={education.degree}
+            startDate={education.startDate}
+            endDate={education.endDate}
+            wam={education.wam}
+            gpa={education.gpa}
+            major={education.major}
+            level={education.level}
           />
         ))}
+      </VStack>
+      <VStack id="skills" alignItems="stretch" gap={4} width={0.6}>
+        <Heading marginRight="calc(70% - 100px)!important" size="lg">
+          Professional Skills
+        </Heading>
+        <SkillsCard />
+      </VStack>
     </FullScreenSection>
   );
 };

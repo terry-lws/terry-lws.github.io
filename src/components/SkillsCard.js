@@ -1,21 +1,53 @@
-import { Heading, WrapItem, Center, Card, CardBody, Stack } from "@chakra-ui/react";
+import { Heading, Text, Grid, Box, GridItem, VStack } from "@chakra-ui/react";
 import React from "react";
 
-const SkillsCard = ({ title, imageSrc }) => {
-    return (
-        <WrapItem boxShadow="lg">
-            <Center>
-                <Card maxW='sm'>
-                    <CardBody>
-                        <img src={imageSrc} />
-                        <Stack mt='6'>
-                            <Heading as="h3" size='md'>{title}</Heading>
-                        </Stack>
-                    </CardBody>
-                </Card>
-            </Center>
-        </WrapItem>
-    );
+const skills = [
+  {
+    category: "Web Development",
+    set: ["HTML", "CSS","JavaScript","TypeScript","Bootstrap", "Angular", "React.js", "Vue.js", "ASP.NET MVC", "WordPress"],
+  },
+  {
+    category: "Other Programming Languages",
+    set: ["Python", "Java", "C++", "C#"],
+  },
+  {
+    category: "DBMS",
+    set: ["SQL Server Management Studio", "Microsoft Access"],
+  },
+  {
+    category: "Design Tools",
+    set: ["Figma", "Canva"],
+  },
+  {
+    category: "Cloud Computing",
+    set: ["Azure", "AWS"],
+  },
+  {
+    category: "Languages",
+    set: ["English", "Mandarin", "Cantonese"],
+  },
+];
+
+const SkillsCard = () => {
+  return (
+    <Box
+      backgroundColor="white"
+      color="#18181b"
+      mx="auto"
+      boxShadow="rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;"
+    >
+      <Grid p={[20]} templateColumns="repeat(2, 1fr)" rowGap={6} columnGap={4}>
+        {skills.map((skills) => 
+        <GridItem colSpan={1}>
+          <VStack alignItems="flex-start">
+            <Heading size={"sm"} color={"teal"}>{skills.category}</Heading>
+            <Text>{skills.set.join(', ')}</Text>
+          </VStack>
+        </GridItem>
+        )}
+      </Grid>
+    </Box>
+  );
 };
 
 export default SkillsCard;
