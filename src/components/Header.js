@@ -1,39 +1,31 @@
 import { useEffect, useRef } from "react";
-import { CopyToClipboard } from "react-copy-to-clipboard";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
-import {
-  faGithub,
-  faLinkedin,
-} from "@fortawesome/free-brands-svg-icons";
+import { NavLink } from "react-router-dom";
+// import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+// import {
+//   faGithub,
+//   faLinkedin,
+// } from "@fortawesome/free-brands-svg-icons";
 import {
   IconButton,
   Box,
   HStack,
   VStack,
   useToast,
-  Tooltip,
   Collapse,
   useBreakpointValue,
   useDisclosure,
-  Heading
+  Heading,
 } from "@chakra-ui/react";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 
-// const socials = [
-//   {
-//     icon: faEnvelope,
-//     url: "terrylam299@gmail.com",
-//   },
-//   {
-//     icon: faGithub,
-//     url: "https://github.com/terry-lws",
-//   },
-//   {
-//     icon: faLinkedin,
-//     url: "https://www.linkedin.com/in/wai-shun-terence-lam-0a5b3b20b/",
-//   },
-// ];
+const ReturnToTop = () => {
+  window.scroll(0, 0);
+}
+
+const navItemStyles = ({ isActive }) => ({
+  color: isActive ? 'teal' : '#18181b'
+})
 
 const Header = () => {
   const handleClick = (anchor) => () => {
@@ -55,7 +47,7 @@ const Header = () => {
 
   const { isOpen, onToggle } = useDisclosure();
 
-  const toast = useToast()
+  const toast = useToast();
 
   const isMobile = useBreakpointValue({ base: true, md: false });
 
@@ -72,24 +64,20 @@ const Header = () => {
       backgroundColor="#ffffffff"
       zIndex="1"
     >
-      <Box color="#18181b" maxWidth="1280px" margin="0 auto">
+      <Box color="#18181b" maxWidth="1280px" margin="0 auto" fontWeight={600}>
         <HStack
           px={{ md: 16, base: 8 }}
-          py={4}
+          py={6}
           justifyContent={{ md: "space-between", base: "flex-start" }}
           alignItems={{ md: "center", base: "flex-start" }}
         >
           <nav>
             <HStack spacing={8}>
               <nav>
-                {isMobile &&
+                {isMobile && (
                   <IconButton
                     size="md"
-                    icon={
-                      <FontAwesomeIcon
-                        icon={faBars}
-                      />
-                    }
+                    icon={<FontAwesomeIcon icon={faBars} />}
                     display={{ md: "none" }}
                     aria-label={isOpen ? "Close Menu" : "Open Menu"}
                     backgroundColor="white"
@@ -97,7 +85,8 @@ const Header = () => {
                     _hover={{ backgroundColor: "whiteAlpha.800" }}
                     _active={{ backgroundColor: "whiteAlpha.900" }}
                     onClick={onToggle}
-                  />}
+                  />
+                )}
                 <Collapse in={isOpen} animateOpacity>
                   <Box
                     top="100%"
@@ -130,24 +119,15 @@ const Header = () => {
                 </Collapse>
               </nav>
               <HStack spacing={8} display={{ base: "none", md: "flex" }}>
-                <Heading fontWeight="900">Terry Lam</Heading>
+                <Heading fontWeight="900">
+                  <NavLink onClick={ReturnToTop} to="/">Terry Lam</NavLink>
+                </Heading>
               </HStack>
             </HStack>
           </nav>
           <nav>
             <HStack spacing={8} display={{ base: "none", md: "flex" }}>
-              <a href="#bio" onClick={handleClick("bio")}>
-                About Me
-              </a>
-              <a href="#resume" onClick={handleClick("resume")}>
-                Resume
-              </a>
-              <a href="#bio" onClick={handleClick("bio")}>
-                Projects
-              </a>
-              <a href="#bio" onClick={handleClick("bio")}>
-                Contact
-              </a>
+              <NavLink style={ navItemStyles } onClick={ReturnToTop} to="/resume">Resume</NavLink>
             </HStack>
           </nav>
         </HStack>

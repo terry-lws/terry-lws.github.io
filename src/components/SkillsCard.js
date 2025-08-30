@@ -4,18 +4,18 @@ import React from "react";
 const skills = [
   {
     category: "Web Development",
-    set: ["HTML", "CSS","JavaScript","TypeScript","Bootstrap", "Angular", "React.js", "Vue.js", "ASP.NET MVC", "WordPress"],
+    set: ["HTML", "CSS","JavaScript","TypeScript","Bootstrap", "Angular", "React", "Vue.js", "ASP.NET", "WordPress"],
   },
   {
     category: "Other Programming Languages",
     set: ["Python", "Java", "C++", "C#"],
   },
   {
-    category: "DBMS",
+    category: "Database Management System",
     set: ["SQL Server Management Studio", "Microsoft Access"],
   },
   {
-    category: "Design Tools",
+    category: "Interface/Graphic Design",
     set: ["Figma", "Canva"],
   },
   {

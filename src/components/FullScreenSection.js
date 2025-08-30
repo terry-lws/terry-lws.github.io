@@ -6,6 +6,8 @@ const FullScreenSection = ({ children, isDarkBackground, ...boxProps }) => {
     <VStack
       backgroundColor={boxProps.backgroundColor}
       color={isDarkBackground ? "white" : "#18181b"}
+      position="relative"
+      className="fade-in-section"
     >
       <VStack maxWidth="1280px" minHeight="100vh" {...boxProps}>
         {children}

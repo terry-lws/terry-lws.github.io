@@ -1,34 +1,34 @@
 import { ChakraProvider } from "@chakra-ui/react";
 import Header from "./components/Header";
-import LandingSection from "./components/LandingSection";
-import ProjectsSection from "./components/ProjectsSection";
-import ContactMeSection from "./components/ContactMeSection";
+// import LandingSection from "./components/LandingSection";
+// import ProjectsSection from "./components/ProjectsSection";
+//import ContactMeSection from "./components/ContactMeSection";
 import Footer from "./components/Footer";
-import { AlertProvider } from "./context/alertContext";
-import Alert from "./components/Alert";
-import SkillsSection from "./components/SkillsSection";
+// import { AlertProvider } from "./context/alertContext";
+// import Alert from "./components/Alert";
+//import SkillsSection from "./components/SkillsSection";
 import ScrollToTopButton from "./components/ScrollToTopButton";
-import BioSection from "./components/BioSection"
-import DropdownMenu from "./components/DropdownMenu";
-import AltHeader from "./components/AltHeader"
+import BioSection from "./components/BioSection";
+//import DropdownMenu from "./components/DropdownMenu";
+//import AltHeader from "./components/AltHeader"
 import ResumeSection from "./components/ResumeSection";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <ChakraProvider>
-      <AlertProvider>
-        <main>
+    <BrowserRouter>
+      <ChakraProvider>
           <Header />
-          {/* <DropdownMenu/> */}
-          {/* <LandingSection /> */}
-          <BioSection />
-          <ResumeSection />
           <ScrollToTopButton />
+          <main>
+            <Routes>
+              <Route path="/" element={<BioSection />} />
+              <Route path="/resume" element={<ResumeSection />} />
+            </Routes>
+          </main>
           <Footer />
-          <Alert />
-        </main>
-      </AlertProvider>
-    </ChakraProvider>
+      </ChakraProvider>
+    </BrowserRouter>
   );
 }
 

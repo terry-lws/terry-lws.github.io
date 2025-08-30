@@ -1,6 +1,6 @@
 import React from "react";
 import FullScreenSection from "./FullScreenSection";
-import { VStack, Heading, Box } from "@chakra-ui/react";
+import { VStack, Heading } from "@chakra-ui/react";
 import EduCards from "./EduCard";
 import SkillsCard from "./SkillsCard";
 
@@ -40,7 +40,7 @@ const ResumeSection = () => {
     <FullScreenSection
       id="resume-section"
       backgroundColor="#e6dace"
-      py={20}
+      py={32}
       spacing={16}
     >
       <Heading>Resume</Heading>

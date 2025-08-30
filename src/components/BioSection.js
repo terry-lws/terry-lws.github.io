@@ -1,28 +1,21 @@
 import React from "react";
-import {
-  Text,
-  Heading,
-  VStack,
-  Box,
-  Image,
-  Button,
-  ButtonGroup,
-} from "@chakra-ui/react";
+import { Text, Heading, Box, Button, ButtonGroup } from "@chakra-ui/react";
 import { Flex } from "@chakra-ui/react";
-//import { Container } from '@chakra-ui/react'
+import { Link } from "react-router-dom";
+import "../index.css";
 import FullScreenSection from "./FullScreenSection";
 import NameCard from "./NameCard";
 
-const handleClick = (anchor) => () => {
-  const id = `${anchor}-section`;
-  const element = document.getElementById(id);
-  if (element) {
-    element.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
-  }
-};
+// const handleClick = (anchor) => () => {
+//   const id = `${anchor}-section`;
+//   const element = document.getElementById(id);
+//   if (element) {
+//     element.scrollIntoView({
+//       behavior: "smooth",
+//       block: "start",
+//     });
+//   }
+// };
 
 const Bio = () => {
   return (
@@ -67,12 +60,14 @@ const Bio = () => {
             job-ready environment.
           </Text>
           <ButtonGroup>
-            <Button colorScheme='teal' borderRadius={100}>
-              <a href="#resume" onClick={handleClick("resume")}>
+            <Link onClick={ () => {window.scroll(0, 0)} } to="/resume">
+              <Button colorScheme="teal" borderRadius={100}>
                 Resume
-              </a>
+              </Button>
+            </Link>
+            <Button colorScheme="teal" borderRadius={100} variant="outline">
+              Projects
             </Button>
-            <Button colorScheme='teal' borderRadius={100} variant='outline'>Projects</Button>
           </ButtonGroup>
           {/* <Text py={3}>
               Aside from web development, I have also acquired knowledge in
