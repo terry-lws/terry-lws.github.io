@@ -37,11 +37,11 @@ const SkillsCard = () => {
       boxShadow="rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;"
     >
       <Grid p={[20]} templateColumns="repeat(2, 1fr)" rowGap={6} columnGap={4}>
-        {skills.map((skills) => 
+        {skills.map((skill) => 
         <GridItem colSpan={1}>
           <VStack alignItems="flex-start">
-            <Heading size={"sm"} color={"teal"}>{skills.category}</Heading>
-            <Text>{skills.set.join(', ')}</Text>
+            <Heading size={"sm"} color={"teal"}>{skill.category}</Heading>
+            <Text>{skill.set.join(', ')}</Text>
           </VStack>
         </GridItem>
         )}

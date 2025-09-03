@@ -21,3 +21,11 @@ code {
   from {opacity: 0%;}
   to {opacity: 100%;}
 }
+
+li.experience-item::marker{
+  color: teal;
+}
+
+.project-hstack:nth-of-type(even){
+  flex-direction: row-reverse
+}

@@ -1,11 +1,6 @@
 import { useEffect, useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { NavLink } from "react-router-dom";
-// import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
-// import {
-//   faGithub,
-//   faLinkedin,
-// } from "@fortawesome/free-brands-svg-icons";
 import {
   IconButton,
   Box,
@@ -127,7 +122,10 @@ const Header = () => {
           </nav>
           <nav>
             <HStack spacing={8} display={{ base: "none", md: "flex" }}>
+              <NavLink style={ navItemStyles } onClick={ReturnToTop} to="/">About Me</NavLink>
               <NavLink style={ navItemStyles } onClick={ReturnToTop} to="/resume">Resume</NavLink>
+              <NavLink style={ navItemStyles } onClick={ReturnToTop} to="/projects">Projects</NavLink>
+              <NavLink style={ navItemStyles } onClick={ReturnToTop} to="/contact">Contact</NavLink>
             </HStack>
           </nav>
         </HStack>

@@ -65,9 +65,11 @@ const Bio = () => {
                 Resume
               </Button>
             </Link>
-            <Button colorScheme="teal" borderRadius={100} variant="outline">
-              Projects
-            </Button>
+            <Link onClick={ () => {window.scroll(0, 0)} } to="/projects">
+              <Button colorScheme="teal" borderRadius={100} variant={"outline"}>
+                Projects
+              </Button>
+            </Link>
           </ButtonGroup>
           {/* <Text py={3}>
               Aside from web development, I have also acquired knowledge in
