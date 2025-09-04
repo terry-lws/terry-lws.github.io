@@ -1,22 +1,20 @@
 {
   "files": {
-    "main.css": "/static/css/main.e6c13ad2.css",
-    "main.js": "/static/js/main.92495f92.js",
+    "main.css": "/static/css/main.75a99468.css",
+    "main.js": "/static/js/main.1eaa29da.js",
     "static/js/787.d3d79a7e.chunk.js": "/static/js/787.d3d79a7e.chunk.js",
-    "static/media/codingv2.gif": "/static/media/codingv2.ccd3fad9d310659fce05.gif",
+    "static/media/wdp.png": "/static/media/wdp.d353d462defde3cbd524.png",
     "static/media/prml.png": "/static/media/prml.b20af4a95e3a9fd53a22.png",
-    "static/media/pfp.jpeg": "/static/media/pfp.d02f015ebb5f44122489.jpeg",
-    "static/media/test.png": "/static/media/test.301a6d9701f3c2ecdf62.png",
+    "static/media/pfp2.jpg": "/static/media/pfp2.ce10b0a2e274f063abda.jpg",
+    "static/media/ls.PNG": "/static/media/ls.9b93de95174ad676df59.PNG",
     "static/media/weather.PNG": "/static/media/weather.472a2891024e79533a29.PNG",
-    "static/media/calculator.PNG": "/static/media/calculator.f6b1e12d544826873164.PNG",
-    "static/media/matlab.png": "/static/media/matlab.cd99114eb8ef072b4ccf.png",
     "index.html": "/index.html",
-    "main.e6c13ad2.css.map": "/static/css/main.e6c13ad2.css.map",
-    "main.92495f92.js.map": "/static/js/main.92495f92.js.map",
+    "main.75a99468.css.map": "/static/css/main.75a99468.css.map",
+    "main.1eaa29da.js.map": "/static/js/main.1eaa29da.js.map",
     "787.d3d79a7e.chunk.js.map": "/static/js/787.d3d79a7e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e6c13ad2.css",
-    "static/js/main.92495f92.js"
+    "static/css/main.75a99468.css",
+    "static/js/main.1eaa29da.js"
   ]
 }
