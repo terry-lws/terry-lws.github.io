@@ -14,19 +14,19 @@ const ResumeSection = () => {
       spacing={16}
     >
       <Heading>Resume</Heading>
-      <VStack id="experience" alignItems="stretch" gap={4} width={0.6}>
+      <VStack id="experience" alignItems="stretch" gap={4} width={{base:0.8, lg:0.6}}>
         <Heading marginRight="calc(70% - 100px)!important" size="lg">
           Experience
         </Heading>
         <ExpCards />
         </VStack>
-        <VStack id="education" alignItems="stretch" gap={4} width={0.6}>
+        <VStack id="education" alignItems="stretch" gap={4} width={{base:0.8, lg:0.6}}>
         <Heading marginRight="calc(70% - 100px)!important" size="lg">
           Education
         </Heading>
         <EduCards />
       </VStack>
-      <VStack id="skills" alignItems="stretch" gap={4} width={0.6}>
+      <VStack id="skills" alignItems="stretch" gap={4} width={{base:0.8, lg:0.6}}>
         <Heading marginRight="calc(70% - 100px)!important" size="lg">
           Professional Skills
         </Heading>

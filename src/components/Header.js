@@ -130,7 +130,7 @@ const Header = () => {
                             }}
                             to="/projects"
                           >
-                            Contact
+                            Projects
                           </NavLink>
                           <NavLink
                             style={navItemStyles}
@@ -140,7 +140,7 @@ const Header = () => {
                             }}
                             to="/contact"
                           >
-                            Projects
+                            Contact
                           </NavLink>
                         </VStack>
                       </Box>
