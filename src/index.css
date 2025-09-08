@@ -1,31 +1,71 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
-.fade-in-section{
+.fade-in-section {
   animation-name: fade-in;
   animation-duration: 1.2s;
 }
 
-@keyframes fade-in{
-  from {opacity: 0%;}
-  to {opacity: 100%;}
+.bottom-to-top {
+  animation-name: bottom-to-top;
+  animation-duration: 1.2s;
 }
 
-li.experience-item::marker{
+@keyframes fade-in {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+
+@keyframes bottom-to-top {
+  from {
+    margin-top: var(--chakra-space-96);
+  }
+  to {
+    margin-top: var(--chakra-space-16);
+  }
+}
+
+li.experience-item::marker {
   color: teal;
 }
 
-.project-hstack:nth-of-type(even){
-  flex-direction: row-reverse
+@media only screen and (min-width: 992px) {
+  .project-hstack:nth-of-type(even) {
+    flex-direction: row-reverse;
+  }
+}
+
+label:has(+ [required])::after {
+  color: #e53e5e;
+  content: " *";
+}
+
+label ~ input,textarea {
+  border-color: #8595ab !important; 
+}
+
+.contact-form {
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+  padding: 20px;
+  width: 80%;
+}
+
+.input-field {
+  margin-bottom: 20px;
 }
