@@ -16,7 +16,15 @@ const experiences = [
     position: "Junior Full-Stack Developer",
     startDate: "Feb 2025",
     endDate: "July 2025",
-    stack: ["Angular", "TypeScript", "ASP.NET", "C#", "DBMS", "GitHub", "Agile development"],
+    stack: [
+      "Angular",
+      "TypeScript",
+      "ASP.NET",
+      "C#",
+      "DBMS",
+      "GitHub",
+      "Agile development",
+    ],
     description: [
       "Developed and implemented new features to enhance application functionality",
       "Diagnosed and resolve software bugs to maintain high system reliability",
@@ -49,7 +57,7 @@ const experiences = [
       "Developed and conducted User Acceptance Test to ensure stringent quality standards",
       "Collaborated with designers and backend developers to achieve objectives, ensuring successful project delivery",
       "Investigated and troubleshot userreported technical issues through API-level fixes",
-      "Participated in Scrum meetings to align with project goals and support agile development"
+      "Participated in Scrum meetings to align with project goals and support agile development",
     ],
   },
 ];
@@ -64,15 +72,25 @@ const ExpCard = () => {
           mx="auto"
           boxShadow="rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;"
         >
-          <Grid p={[20]} templateColumns="repeat(2, 1fr)" gap={4}>
+          <Grid
+            p={{base:"5", lg:"20"}}
+            templateColumns={{ base: "repeat(1, 1fr)", lg: "repeat(2, 1fr)" }}
+            gap={4}
+          >
             <GridItem colSpan={1}>
               <VStack alignItems="flex-start">
                 <Heading size="md" color="teal">
                   {experience.startDate} - {experience.endDate}
                 </Heading>
-                <Heading size="md" fontWeight={"normal"}>{experience.position}</Heading>
+                <Heading size="md" fontWeight={"normal"}>
+                  {experience.position}
+                </Heading>
                 <Text>{experience.company}</Text>
-                {experience.stack && <Text fontWeight={600}>Stack/Skills: {experience.stack.join(", ")}</Text>}
+                {experience.stack && (
+                  <Text fontWeight={600}>
+                    Stack/Skills: {experience.stack.join(", ")}
+                  </Text>
+                )}
               </VStack>
             </GridItem>
             <GridItem colSpan={1}>

@@ -11,16 +11,17 @@ import {
   useBreakpointValue,
   useDisclosure,
   Heading,
+  Text,
 } from "@chakra-ui/react";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 
 const ReturnToTop = () => {
   window.scroll(0, 0);
-}
+};
 
 const navItemStyles = ({ isActive }) => ({
-  color: isActive ? 'teal' : '#18181b'
-})
+  color: isActive ? "teal" : "#18181b",
+});
 
 const Header = () => {
   const handleClick = (anchor) => () => {
@@ -70,17 +71,24 @@ const Header = () => {
             <HStack spacing={8}>
               <nav>
                 {isMobile && (
-                  <IconButton
-                    size="md"
-                    icon={<FontAwesomeIcon icon={faBars} />}
-                    display={{ md: "none" }}
-                    aria-label={isOpen ? "Close Menu" : "Open Menu"}
-                    backgroundColor="white"
-                    color="black"
-                    _hover={{ backgroundColor: "whiteAlpha.800" }}
-                    _active={{ backgroundColor: "whiteAlpha.900" }}
-                    onClick={onToggle}
-                  />
+                  <HStack>
+                    <IconButton
+                      size="md"
+                      icon={<FontAwesomeIcon icon={faBars} />}
+                      display={{ md: "none" }}
+                      aria-label={isOpen ? "Close Menu" : "Open Menu"}
+                      backgroundColor="white"
+                      color="black"
+                      _hover={{ backgroundColor: "whiteAlpha.800" }}
+                      _active={{ backgroundColor: "whiteAlpha.900" }}
+                      onClick={onToggle}
+                    />
+                    <Heading fontWeight="900">
+                      <NavLink onClick={ReturnToTop} to="/">
+                        Terry Lam
+                      </NavLink>
+                    </Heading>
+                  </HStack>
                 )}
                 <Collapse in={isOpen} animateOpacity>
                   <Box
@@ -94,19 +102,46 @@ const Header = () => {
                     <HStack spacing={4}>
                       <Box pb={4} overflow="hidden" transition="0.3s ease">
                         <VStack spacing={4} alignItems="flex-start">
-                          Terry
-                          <a href="#bio" onClick={handleClick("bio")}>
+                          <NavLink
+                            style={navItemStyles}
+                            onClick={() => {
+                              ReturnToTop();
+                              handleItemClick();
+                            }}
+                            to="/"
+                          >
                             About Me
-                          </a>
-                          <a href="#skills" onClick={handleClick("skills")}>
+                          </NavLink>
+                          <NavLink
+                            style={navItemStyles}
+                            onClick={() => {
+                              ReturnToTop();
+                              handleItemClick();
+                            }}
+                            to="/resume"
+                          >
                             Resume
-                          </a>
-                          <a href="#projects" onClick={handleClick("projects")}>
-                            Projectss
-                          </a>
-                          <a href="#projects" onClick={handleClick("projects")}>
+                          </NavLink>
+                          <NavLink
+                            style={navItemStyles}
+                            onClick={() => {
+                              ReturnToTop();
+                              handleItemClick();
+                            }}
+                            to="/projects"
+                          >
                             Contact
-                          </a>
+                          </NavLink>
+                          <NavLink
+                            style={navItemStyles}
+                            onClick={() => {
+                              ReturnToTop();
+                              handleItemClick();
+                            }}
+                            to="/contact"
+                          >
+                            Projects
+                          </NavLink>
                         </VStack>
                       </Box>
                     </HStack>
@@ -115,17 +150,35 @@ const Header = () => {
               </nav>
               <HStack spacing={8} display={{ base: "none", md: "flex" }}>
                 <Heading fontWeight="900">
-                  <NavLink onClick={ReturnToTop} to="/">Terry Lam</NavLink>
+                  <NavLink onClick={ReturnToTop} to="/">
+                    Terry Lam
+                  </NavLink>
                 </Heading>
               </HStack>
             </HStack>
           </nav>
           <nav>
             <HStack spacing={8} display={{ base: "none", md: "flex" }}>
-              <NavLink style={ navItemStyles } onClick={ReturnToTop} to="/">About Me</NavLink>
-              <NavLink style={ navItemStyles } onClick={ReturnToTop} to="/resume">Resume</NavLink>
-              <NavLink style={ navItemStyles } onClick={ReturnToTop} to="/projects">Projects</NavLink>
-              <NavLink style={ navItemStyles } onClick={ReturnToTop} to="/contact">Contact</NavLink>
+              <NavLink style={navItemStyles} onClick={ReturnToTop} to="/">
+                About Me
+              </NavLink>
+              <NavLink style={navItemStyles} onClick={ReturnToTop} to="/resume">
+                Resume
+              </NavLink>
+              <NavLink
+                style={navItemStyles}
+                onClick={ReturnToTop}
+                to="/projects"
+              >
+                Projects
+              </NavLink>
+              <NavLink
+                style={navItemStyles}
+                onClick={ReturnToTop}
+                to="/contact"
+              >
+                Contact
+              </NavLink>
             </HStack>
           </nav>
         </HStack>

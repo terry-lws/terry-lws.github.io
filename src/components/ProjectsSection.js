@@ -8,6 +8,7 @@ import {
   HStack,
   Text,
   Divider,
+  Link,
 } from "@chakra-ui/react";
 
 const projects = [
@@ -28,20 +29,22 @@ const projects = [
   {
     title: "LuggyShare",
     description:
-      "A web app that allows user to buy",
-    getImageSrc: () => require("../images/wdp.png"),
+      "This web app connects requesters with travelers who have spare luggage space, enabling seamless cross-border shopping and delivery. Requesters can post what they need, and travelers can accept requests, purchase items, and transport them in their unused baggage allowance.",
+    getImageSrc: () => require("../images/ls.PNG"),
   },
   {
-    title: "Canberra Restaurant",
+    title: "Australian Council of Education Research OS Test",
     description:
-      "A simple website written in jQuery. The website recommands local restaurants in Canberra. Users are able to leave and like comments. Comments and likes are stored and managed in a database.",
-    getImageSrc: () => require("../images/wdp.png"),
+      "This project is a web development assessment/test provided by Australian Council of Education Research (ACER). This project is written in JavaScript (React). Instructions are provided to install and run the website.",
+    getImageSrc: () => require("../images/acer.PNG"),
+    github: "https://github.com/terry-lws/os-test",
   },
   {
     title: "Weather App",
     description:
       "My first React project. A simple weather report web app constructed with React and JavaScript. The app fetches real-time data of a location such as temperature, weather condition and wind speed from a third party online service using API.",
     getImageSrc: () => require("../images/weather.PNG"),
+    github: "https://github.com/terry-lws/weather-app"
   },
   {
     title: "Predicting Diabetes Using Machine Learning Methods",
@@ -60,15 +63,16 @@ const ProjectsSection = () => {
       spacing={16}
     >
       <Heading>Projects</Heading>
-      <VStack>
+      <VStack className="bottom-to-top">
         {projects.map((project) => (
           <>
             <HStack
               className="project-hstack"
               sx={{ margin: "8 !important" }}
               gap={4}
+              flexDirection={{ base: "column", lg: "row" }}
             >
-              <Box width={"50%"}>
+              <Box width={{ base: "100%", lg: "50%" }}>
                 <Image
                   w={450}
                   display={"block"}
@@ -76,9 +80,19 @@ const ProjectsSection = () => {
                   src={project.getImageSrc()}
                 />
               </Box>
-              <VStack width={"50%"} alignItems={"flex-start"}>
-                <Heading size={"lg"}>{project.title}</Heading>
+              <VStack
+                width={{ base: "100%", lg: "50%" }}
+                alignItems={"flex-start"}
+              >
+                <Heading size={"lg"} color={"teal"}>
+                  {project.title}
+                </Heading>
                 <Text>{project.description}</Text>
+                {project.github && (
+                  <Link fontWeight={600} href={project.github} target="_blank">
+                    Github Repository
+                  </Link>
+                )}
               </VStack>
             </HStack>
             <Divider borderColor={"black"} />

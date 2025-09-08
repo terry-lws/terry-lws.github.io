@@ -1,18 +1,21 @@
+import ContactForm from "./ContactForm";
 import FullScreenSection from "./FullScreenSection";
+import { Heading } from "@chakra-ui/react";
 
 const Contact = () => {
-  return(
+  return (
     <FullScreenSection
-      id="bio-section"
-      backgroundColor="#d2f2f9"
-      px={8}
-      py={20}
-      alignItems="flex-start"
+      id="contact-section"
+      backgroundColor="#e6dace"
+      py={32}
       justifyContent="center"
       spacing={8}
+      w={"100%"}
     >
+      <Heading>Contact Me</Heading>
+      <ContactForm w={"100%"}></ContactForm>
     </FullScreenSection>
-  )
-}
+  );
+};
 
 export default Contact;

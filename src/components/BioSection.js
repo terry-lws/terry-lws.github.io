@@ -22,7 +22,7 @@ const Bio = () => {
     <FullScreenSection
       id="bio-section"
       backgroundColor="#d2f2f9"
-      px={8}
+      px={{base:2, lg:8}}
       py={20}
       alignItems="flex-start"
       justifyContent="center"
@@ -32,13 +32,13 @@ const Bio = () => {
         gap={8}
         wrap={{ base: "wrap", lg: "nowrap" }}
         justifyContent="center"
+        mt={30}
       >
-        <NameCard></NameCard>
+        <NameCard w={{ lg: "50%" }} />
         <Box w={{ lg: "50%" }}>
           <Heading as="h1">Terry Lam</Heading>
           <Text py={3}>
-            Hi there, I'm Terry! Welcome to my portfolio. I am a front-end web
-            developer intern at Vpply and a post-graduate computer science
+            Hi there, I'm Terry! I am a Masters computer science
             student at Monash University.
           </Text>
           <Text py={3}>
@@ -54,12 +54,9 @@ const Bio = () => {
             Throughout my academic studies, I have taken courses in web design
             and programming, which have helped me develop a strong foundation in
             HTML, CSS, and JavaScript, along with other web development
-            frameworks and libraries. I am currently pursuing a professional
-            certificate course in front-end web development provided by Meta to
-            equip myself with industry-standard skills and prepare myself for a
-            job-ready environment.
+            frameworks and libraries.
           </Text>
-          <ButtonGroup>
+          <ButtonGroup py={3}>
             <Link onClick={ () => {window.scroll(0, 0)} } to="/resume">
               <Button colorScheme="teal" borderRadius={100}>
                 Resume
