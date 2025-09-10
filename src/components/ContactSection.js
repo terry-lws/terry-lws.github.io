@@ -12,7 +12,7 @@ const Contact = () => {
       spacing={8}
       w={"100%"}
     >
-      <Heading>Contact Me</Heading>
+      <Heading px={4} textAlign={"center"}>Contact Me / Request a CV</Heading>
       <ContactForm w={"100%"}></ContactForm>
     </FullScreenSection>
   );

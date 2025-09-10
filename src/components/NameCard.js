@@ -83,7 +83,7 @@ const NameCard = () => {
             </Tooltip>
           </a>
           <NavLink style={navItemStyles} onClick={ReturnToTop} to="/contact">
-            <Tooltip label="Send me an email!">
+            <Tooltip label="Send me a message">
               <FontAwesomeIcon
                 icon={socials.find((p) => p.icon === faEnvelope).icon}
                 size="2x"
