@@ -13,25 +13,25 @@ import BioSection from "./components/BioSection";
 import ResumeSection from "./components/ResumeSection";
 import ProjectsSection from "./components/ProjectsSection";
 import ContactSection from "./components/ContactSection";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, HashRouter } from "react-router-dom";
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <ChakraProvider>
-          <Header />
-          <main>
+        <Header />
+        <main>
             <Routes>
               <Route path="/" element={<BioSection />} />
               <Route path="/resume" element={<ResumeSection />} />
               <Route path="/projects" element={<ProjectsSection />} />
               <Route path="/contact" element={<ContactSection />} />
             </Routes>
-            <ScrollToTopButton />
-          </main>
-          <Footer />
+          <ScrollToTopButton />
+        </main>
+        <Footer />
       </ChakraProvider>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
