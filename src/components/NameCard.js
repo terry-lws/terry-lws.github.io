@@ -58,7 +58,7 @@ const NameCard = () => {
         <VStack spacing={5} p={[2, 4]} align="center">
           <Avatar size="2xl" src={pfp} />
           <Heading size="md">Terry Lam</Heading>
-          <Text>Software Developer</Text>
+          <Text>Junior Web Developer</Text>
         </VStack>
       </CardBody>
       <CardFooter bgColor="white" width="100%" justifyContent="center">
