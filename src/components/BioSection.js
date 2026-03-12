@@ -52,19 +52,19 @@ const Bio = () => {
           </Text>
           <Text py={3}>
             Throughout my academic studies, I have taken courses in web design
-            and programming, which have helped me develop a strong foundation in
-            HTML, CSS, and JavaScript, along with other web development
-            frameworks and libraries.
+            and software development, which have helped me develop a strong foundation in
+            JavaScript, along with other web development
+            frameworks and libraries such as React.
           </Text>
           <ButtonGroup py={3}>
-            <Link onClick={ () => {window.scroll(0, 0)} } to="/resume">
+            <Link onClick={ () => {window.scroll(0, 0)} } to="/projects">
               <Button colorScheme="teal" borderRadius={100}>
-                Resume
+                Projects
               </Button>
             </Link>
-            <Link onClick={ () => {window.scroll(0, 0)} } to="/projects">
+            <Link onClick={ () => {window.scroll(0, 0)} } to="/resume">
               <Button colorScheme="teal" borderRadius={100} variant={"outline"}>
-                Projects
+                Resume
               </Button>
             </Link>
           </ButtonGroup>
