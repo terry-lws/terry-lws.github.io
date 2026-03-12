@@ -47,6 +47,25 @@ const Header = () => {
 
   const isMobile = useBreakpointValue({ base: true, md: false });
 
+  const navItems = [
+    {
+      name: "About Me",
+      link: "/",
+    },
+    {
+      name: "Projects",
+      link: "/projects",
+    },
+    {
+      name: "Resume",
+      link: "/resume",
+    },
+    {
+      name: "Contact",
+      link: "/contact",
+    },
+  ];
+
   return (
     <Box
       position="fixed"
@@ -102,52 +121,27 @@ const Header = () => {
                     <HStack spacing={4}>
                       <Box pb={4} overflow="hidden" transition="0.3s ease">
                         <VStack spacing={4} alignItems="flex-start">
-                          <NavLink
-                            style={navItemStyles}
-                            onClick={() => {
-                              ReturnToTop();
-                              handleItemClick();
-                            }}
-                            to="/"
-                          >
-                            About Me
-                          </NavLink>
-                          <NavLink
-                            style={navItemStyles}
-                            onClick={() => {
-                              ReturnToTop();
-                              handleItemClick();
-                            }}
-                            to="/resume"
-                          >
-                            Resume
-                          </NavLink>
-                          <NavLink
-                            style={navItemStyles}
-                            onClick={() => {
-                              ReturnToTop();
-                              handleItemClick();
-                            }}
-                            to="/projects"
-                          >
-                            Projects
-                          </NavLink>
-                          <NavLink
-                            style={navItemStyles}
-                            onClick={() => {
-                              ReturnToTop();
-                              handleItemClick();
-                            }}
-                            to="/contact"
-                          >
-                            Contact
-                          </NavLink>
+                          {navItems.map((navItem) => (
+                            <NavLink
+                              style={navItemStyles}
+                              onClick={() => {
+                                ReturnToTop();
+                                handleItemClick();
+                              }}
+                              to={navItem.link}
+                            >
+                              {navItem.name}
+                            </NavLink>
+                          ))}
                         </VStack>
                       </Box>
                     </HStack>
                   </Box>
                 </Collapse>
               </nav>
+
+              // mobile nav ends here
+
               <HStack spacing={8} display={{ base: "none", md: "flex" }}>
                 <Heading fontWeight="900">
                   <NavLink onClick={ReturnToTop} to="/">
@@ -159,26 +153,15 @@ const Header = () => {
           </nav>
           <nav>
             <HStack spacing={8} display={{ base: "none", md: "flex" }}>
-              <NavLink style={navItemStyles} onClick={ReturnToTop} to="/">
-                About Me
-              </NavLink>
-              <NavLink style={navItemStyles} onClick={ReturnToTop} to="/resume">
-                Resume
-              </NavLink>
-              <NavLink
-                style={navItemStyles}
-                onClick={ReturnToTop}
-                to="/projects"
-              >
-                Projects
-              </NavLink>
-              <NavLink
-                style={navItemStyles}
-                onClick={ReturnToTop}
-                to="/contact"
-              >
-                Contact
-              </NavLink>
+              {navItems.map((navItem) => (
+                <NavLink
+                  style={navItemStyles}
+                  onClick={ReturnToTop}
+                  to={navItem.link}
+                >
+                  {navItem.name}
+                </NavLink>
+              ))}
             </HStack>
           </nav>
         </HStack>
